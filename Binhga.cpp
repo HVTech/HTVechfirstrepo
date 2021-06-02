@@ -62,11 +62,11 @@ void Tim_kiem_theo_sdt(contact *data_user)
             cout << "\nDia chi: " << data_user[i].Address;
             cout << "\nNguoi phu trach: " << data_user[i].assignee;
             cout << "\n----------------------------------------\n";
-            check == true;
+            check = true;
         }
     }
     if (!check)
-        cout << "Nguoi ban tim khong co trong du lieu1!";
+        cout << "Nguoi ban tim khong co trong du lieu!";
 }
 //---------------------------
 
@@ -95,7 +95,7 @@ void Tim_kiem_theo_email(contact *data_user)
         }
     }
     if (!check)
-        cout << "Nguoi ban tim khong co trong du lieu2!";
+        cout << "Nguoi ban tim khong co trong du lieu!";
 }
 //---------------------------
 
@@ -110,7 +110,7 @@ void Search_data(contact *data_user)
     cout << "\n";
     if (chosse == 1)
         Tim_kiem_theo_sdt(data_user);
-    else if(chosse == 2)
+    if (chosse == 2)
         Tim_kiem_theo_email(data_user);
 }
 //----------------------------
