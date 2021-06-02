@@ -27,17 +27,16 @@ void Input_data(contact *data_user)
         cin >> n;
     }
     cin.ignore();
-    int j=1;
-    for (auto i=data_user;j<=n; ++i)
+    for (int i=0; i<n; i++)
     {
-        cout << "Nhap thong tin cua nguoi dung thu " << j; j++;
-        cout << "\nHo va ten: "; getline(cin, i->Name);
-        cout << "ID: "; getline(cin, i->id);
-        cout << "Ngay sinh (dd/mm/yy): "; getline(cin, i->DOB);
-        cout << "So dien thoai: "; getline(cin, i->phone);
-        cout << "Email: "; getline(cin, i->email);
-        cout << "Dia chi: "; getline(cin, i->Address);
-        cout << "Nguoi phu trach: "; getline(cin, i->assignee);
+        cout << "Nhap thong tin cua nguoi dung thu " << i+1;
+        cout << "\nHo va ten: "; getline(cin, data_user[i].Name);
+        cout << "ID: "; getline(cin, data_user[i].id);
+        cout << "Ngay sinh (dd/mm/yy): "; getline(cin, data_user[i].DOB);
+        cout << "So dien thoai: "; getline(cin, data_user[i].phone);
+        cout << "Email: "; getline(cin, data_user[i].email);
+        cout << "Dia chi: "; getline(cin, data_user[i].Address);
+        cout << "Nguoi phu trach: "; getline(cin, data_user[i].assignee);
         cout << "----------------------------------------\n";
     }
 }
@@ -49,20 +48,19 @@ void Tim_kiem_theo_sdt(contact *data_user)
     string sdt;
     cout << "Nhap SDT muon tim kiem: ";
     cin >> sdt;
-    int h=1;
-    for (auto i=data_user; h<=n ; ++i)
+    
+    for (int i=0; i<n ; i++)
     {
-        h ++;
-        if (i->phone == sdt)
+        if (data_user[i].phone == sdt)
         {
-            cout << "Thong tin cua nguoi dung thu " << i;
-            cout << "\nHo va ten: " << i->Name;
-            cout << "\nID: " << i->id;
-            cout << "\nNgay sinh (dd/mm/yy): " << i->DOB;
-            cout << "\nSo dien thoai: " << i->phone;
-            cout << "\nEmail: " << i->email;
-            cout << "\nDia chi: " << i->Address;
-            cout << "\nNguoi phu trach: " << i->assignee;
+            cout << "Thong tin cua nguoi dung thu " << i+1;
+            cout << "\nHo va ten: " << data_user[i].Name;
+            cout << "\nID: " << data_user[i].id;
+            cout << "\nNgay sinh (dd/mm/yy): " << data_user[i].DOB;
+            cout << "\nSo dien thoai: " << data_user[i].phone;
+            cout << "\nEmail: " << data_user[i].email;
+            cout << "\nDia chi: " << data_user[i].Address;
+            cout << "\nNguoi phu trach: " << data_user[i].assignee;
             cout << "\n----------------------------------------\n";
             check == true;
         }
@@ -78,20 +76,20 @@ void Tim_kiem_theo_email(contact *data_user)
     string email;
     cout << "Nhap email muon tim kiem: ";
     cin >> email;
-    int h=1;
-    for (auto i=data_user; h<=n; ++i)
+    
+    for (int i=0; i<n; i++)
     {
-        h ++;
-        if (i->email == email)
+
+        if (data_user[i].email == email)
         {
-            cout << "Thong tin cua nguoi dung thu " << h;
-            cout << "\nHo va ten: " << i->Name;
-            cout << "\nID: " << i->id;
-            cout << "\nNgay sinh (dd/mm/yy): " << i->DOB;
-            cout << "\nSo dien thoai: " << i->phone;
-            cout << "\nEmail: " << i->email;
-            cout << "\nDia chi: " << i->Address;
-            cout << "\nNguoi phu trach: " << i->assignee;
+            cout << "Thong tin cua nguoi dung thu " << i+1;
+            cout << "\nHo va ten: " << data_user[i].Name;
+            cout << "\nID: " << data_user[i].id;
+            cout << "\nNgay sinh (dd/mm/yy): " << data_user[i].DOB;
+            cout << "\nSo dien thoai: " << data_user[i].phone;
+            cout << "\nEmail: " << data_user[i].email;
+            cout << "\nDia chi: " << data_user[i].Address;
+            cout << "\nNguoi phu trach: " << data_user[i].assignee;
             cout << "\n----------------------------------------\n";
             check = true;
         }
@@ -119,18 +117,16 @@ void Search_data(contact *data_user)
 
 void Xuat_danh_ba(contact *data_user)
 {
-    int h=1;
-    for (auto i=data_user; h<=n; ++i)
+    for (int i=0; i<n; i++)
     {
-        cout << "Thong tin cua nguoi dung thu " << h;
-        h ++;
-        cout << "\nHo va ten: " << i->Name;
-        cout << "\nID: " << i->id;
-        cout << "\nNgay sinh (dd/mm/yy): " << i->DOB;
-        cout << "\nSo dien thoai: " << i->phone;
-        cout << "\nEmail: " << i->email;
-        cout << "\nDia chi: " << i->Address;
-        cout << "\nNguoi phu trach: " << i->assignee;
+        cout << "Thong tin cua nguoi dung thu " << i+1;
+        cout << "\nHo va ten: " << data_user[i].Name;
+        cout << "\nID: " << data_user[i].id;
+        cout << "\nNgay sinh (dd/mm/yy): " << data_user[i].DOB;
+        cout << "\nSo dien thoai: " << data_user[i].phone;
+        cout << "\nEmail: " << data_user[i].email;
+        cout << "\nDia chi: " << data_user[i].Address;
+        cout << "\nNguoi phu trach: " << data_user[i].assignee;
         cout << "\n----------------------------------------\n";
     }
 }
